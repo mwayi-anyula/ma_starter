@@ -1,0 +1,8 @@
+# TypoScript Includes
+# Include in root TS constants
+@import 'EXT:ma_starter/Configuration/TypoScript/Constants/ConfigConstants.typoscript'
+@import 'EXT:ma_starter/Configuration/TypoScript/Constants/SiteConstants.typoscript'
+@import 'EXT:ma_starter/Configuration/TypoScript/Constants/FluidStyledContentConstants.typoscript'
+@import 'EXT:ma_starter/Configuration/TypoScript/Constants/HeaderdataConstants.typoscript'
+@import 'EXT:ma_starter/Configuration/TypoScript/Constants/ContainerConstants.typoscript'
+//@import 'EXT:ma_starter/Configuration/TypoScript/Constants/PowermailConstants.typoscript'

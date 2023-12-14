@@ -1,0 +1,145 @@
+site {
+  # customsubcategory=1logo=Default assets
+  images {
+    # cat=Site Variables/1logo; type=string; label=Path to customer logo
+    logo = EXT:ma_starter/Resources/Public/Images/logo.svg
+    # cat=Site Variables/1logo; type=string; label=Path to customer logo (full)
+    logoText = EXT:ma_starter/Resources/Public/Images/logo.png
+    # cat=Site Variables/1logo; type=string; label=Path to customer logo (mini)
+    logoMini = EXT:ma_starter/Resources/Public/Images/logo-mini.svg
+  }
+
+  colors {
+    # cat=Site Variables/1logo; type=color; label=Default color
+    default = #317792
+  }
+
+  text {
+    # cat=Site Variables/1logo; type=string; label=Site short form
+    short-form = ma
+  }
+
+  # customsubcategory=2snippets=Snippets
+  snippets {
+    # cat=Site Variables/2snippets; type=int; label=Default Teaser
+    defaultTeaser = 32
+    # cat=Site Variables/2snippets; type=int; label=Legal Navigation (Footer)
+    legalNav =
+    # cat=Site Variables/2snippets; type=int; label=Top
+    topNav =
+    # cat=Site Variables/2snippets; type=int; label=Global Contact page
+    contactPage =
+    # cat=Site Variables/2snippets; type=int; label=Secondary contact form/ Newsletter
+    footerContactForm =
+  }
+
+  # customsubcategory=3news=News
+  extensions {
+    news {
+      # cat=Site Variables/3news; type=int; label=Global storage pid
+      storagePid =
+      # cat=Site Variables/3news; type=int; label=Global list pid
+      listPid =
+      # cat=Site Variables/3news; type=int; label=Global detail pid
+      detailPid =
+      # cat=Site Variables/3news; type=string; label=List Placeholder Image
+      dummyImage =
+    }
+
+    # customsubcategory=4eventnews=Event News
+    eventnews {
+      # cat=Site Variables/4eventnews; type=int; label=Global storage pid
+      storagePid =
+      # cat=Site Variables/4eventnews; type=int; label=Global list pid
+      listPid =
+      # cat=Site Variables/4eventnews; type=int; label=Global detail pid
+      detailPid =
+      # cat=Site Variables/4eventnews; type=string; label=List Placeholder Image
+      dummyImage =
+    }
+
+    # customsubcategory=5kesearch=Faceted Search (ke_search)
+    ke_search {
+      # cat=Site Variables/5kesearch; type=int; label=Search form uid
+      searchFormUid =
+      # cat=Site Variables/5kesearch; type=int; label=Results pid
+      resultsPid =
+    }
+
+    # customsubcategory=6powermail=Formular
+    powermail {
+      # cat=Site Variables/6powermail; type=string; label= Global Sender name
+      defaultName = Mwayi Anyula
+      # cat=Site Variables/6powermail; type=email; label= Global Sender e-mail address
+      defaultEmail = code@mwayianyula.com
+      # cat=Site Variables/6powermail; type=email; label= Global Form e-mail address
+      formSenderEmail = code@mwayianyula.com
+      # cat=Site Variables/6powermail; type=string; label= Global reciever e-mail subject
+      defaultReceiverSubject = Anfrage über Kontaktfomular
+      # cat=Site Variables/6powermail; type=string; label= Global confirmation e-mail subject
+      defaultSenderSubject = Vielen Dank für Ihre Anfrage!
+      # cat=Site Variables/6powermail; type=int; label= Global e-mail storage pid
+      storagePid = 7
+    }
+
+    # customsubcategory=7ttaddress=Ansprechpartner (tt_address)
+    ttaddress {
+      # cat=Site Variables/7ttaddress; type=int; label= Ansprechpartner Global storage pid
+      storagePid =
+      # cat=Site Variables/7ttaddress; type=string; label=Vcard Placeholder Image
+      dummyImage =
+    }
+  }
+
+  # customsubcategory=8social=Social media
+  socialMedia {
+    # cat=Site Variables/8social; type=string; label=Xing
+    xing =
+    # cat=Site Variables/8social; type=string; label=Facebook
+    facebook =
+    # cat=Site Variables/8social; type=string; label=Twitter
+    twitter =
+    # cat=Site Variables/8social; type=string; label=YouTube
+    youtube =
+    # cat=Site Variables/8social; type=string; label=Instagram
+    instagram =
+  }
+
+  # metadata.
+  # customsubcategory=9meta=Metadata
+  metaData {
+    # cat=Site Variables/9meta; type=string; label= Title
+    title = Mwayi Anyula
+    # cat=Site Variables/9meta; type=string; label= Description
+    description = Ihre TYPO3 Agentur für Internet und Intranet aus Tübingen. Professionelles Webdesign, TYPO3, SEO, Konzeption und Beratung für optimale Lösungen.
+    # cat=Site Variables/9meta; type=string; label= Keywords
+    keywords = typo3, webdesign, internet, intranet, tübingen, wordpress
+
+    # Company info
+    # cat=Site Variables/9meta; type=string; label= E-Mail
+    email = code@mwayianyula.com
+    # cat=Site Variables/9meta; type=string; label= Telephone
+    phone = +49 7071 70491-00
+    # cat=Site Variables/9meta; type=string; label= Telefax
+    fax = +49 7071 70491-99
+    # cat=Site Variables/9meta; type=string; label= Latitude
+    latitude =
+    # cat=Site Variables/9meta; type=string; label= Longitude
+    longitude =
+    # cat=Site Variables/9meta; type=string; label= Street
+    street = Alexanderstraße 65
+    # cat=Site Variables/9meta; type=string; label= Town
+    city = Tübingen
+    # cat=Site Variables/9meta; type=string; label= Language (Short Form) e.g DE
+    locale = DE
+    # cat=Site Variables/9meta; type=string; label= Region
+    region = Baden-Württemberg
+    # cat=Site Variables/9meta; type=string; label= zip
+    zip = 72072
+    # cat=Site Variables/9meta; type=string; label= Country
+    country = Deutschland
+
+    # cat=Site Variables/9meta; type=string; label= Image
+    image = EXT:ma_starter/Resources/Public/Images/logo.png
+  }
+}

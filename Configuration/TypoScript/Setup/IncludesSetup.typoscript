@@ -1,0 +1,9 @@
+# Includes TypoScript
+# Include in root TS setup
+@import 'EXT:ma_starter/Configuration/TypoScript/Setup/ConfigSetup.typoscript'
+@import 'EXT:ma_starter/Configuration/TypoScript/Setup/SiteSetup.typoscript'
+@import 'EXT:ma_starter/Configuration/TypoScript/Setup/HeaderdataSetup.typoscript'
+@import 'EXT:ma_starter/Configuration/TypoScript/Setup/FluidStyledContentSetup.typoscript'
+//@import 'EXT:ma_starter/Configuration/TypoScript/Setup/PowermailSetup.typoscript'
+@import 'EXT:ma_starter/Configuration/TypoScript/Setup/ContainerSetup.typoscript'
+@import 'EXT:ma_starter/Configuration/TypoScript/Setup/PageSetup.typoscript'

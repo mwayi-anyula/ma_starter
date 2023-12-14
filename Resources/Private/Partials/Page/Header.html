@@ -1,0 +1,106 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="header-inner pt-2 md:pt-4">
+  <div class="relative">
+
+    <div class="main-bar">
+      <div class="flex flex-row justify-between items-center gap-4 xl:gap-8">
+        <div class="">
+          <div class="logo">
+            <a href="/" title="{f:if(condition: settings.site.text-form, then: '{settings.site.text-form} Startseite')}{settings.site.text-form}" class="logo__link">
+              <f:if condition="{settings.site.images.logo}">
+                <f:then>
+                  <f:image src="{f:uri.image(src: settings.site.images.logo)}" class="logo__image" alt="logo {settings.site.text.short-form}" />
+                </f:then>
+                <f:else>
+                  Logo
+                </f:else>
+              </f:if>
+
+            </a>
+          </div>
+        </div>
+
+
+        <div class="">
+          <div class="flex flex-col items-end content-between">
+            <f:if condition="{topnav}">
+              <div class="">
+                <div class="top-bar">
+                  <div class="top-bar-nav">
+                    <f:if condition="{settings.site.snippets.rootPid} == 4">
+                      <f:then>
+                        <f:if condition="{settings.site.snippets.topBarText}">
+                            <span class="top-bar-nav__link">{settings.site.snippets.topBarText -> f:format.html() -> f:format.stripTags(allowedTags: "<i><span><br>")}</span>
+                        </f:if>
+                      </f:then>
+                      <f:else>
+                        <f:for each="{topnav}" as="topnavItem" iteration="iteratorTopnav">
+                          <f:if condition="{iteratorTopnav}">
+                            <a href="{topnavItem.link}" title="{topnavItem.title -> f:format.stripTags() -> f:spaceless()}" class="top-bar-nav__link{f:if(condition: topnavItem.active, then: ' top-bar-nav__link--active')}">
+                              <f:format.stripTags allowedTags="<i><b><strong><svg><span>">
+                                <f:format.html>{topnavItem.title}</f:format.html>
+                              </f:format.stripTags>
+                            </a>
+                          </f:if>
+                        </f:for>
+                      </f:else>
+                    </f:if>
+                  </div>
+                </div>
+              </div>
+            </f:if>
+            <div class="">
+              <div class="main-nav-container">
+                <div class="main-nav-toggle lg:hidden">
+                  <div class="hamburger hamburger--spin js-hamburger">
+                    <div class="hamburger-box">
+                      <div class="hamburger-inner"></div>
+                    </div>
+                  </div>
+                </div>
+                <nav class="main-nav hidden lg:block">
+                  <ul class="main-nav__list absolute right-0 lg:relative">
+                    <li class="main-nav__item{f:if(condition: data.is_siteroot, then: ' main-nav__item--active')}" >
+                      <a href="/" class="main-nav__link{f:if(condition: data.is_siteroot, then: ' main-nav__link--active')}">
+                        Home
+                      </a>
+                    </li>
+                    <f:for each="{mainnav}" as="mainnavItem">
+                      <li class="main-nav__item{f:if(condition: mainnavItem.children, then: ' main-nav__item--has-sub')}{f:if(condition: mainnavItem.active, then: ' main-nav__item--active')}">
+                        <span class="main-nav__link-outer">
+                          <a class="main-nav__link{f:if(condition: mainnavItem.current, then: ' main-nav__link--active')}"
+                               href="{mainnavItem.link}" target="{mainnavItem.target}" title="{mainnavItem.title}">
+                            {mainnavItem.title}
+                          </a>
+                          {f:if(condition: mainnavItem.children, then: ' <span class="dropdown-icon "></span>')}
+                        </span>
+                        <f:if condition="{mainnavItem.children}">
+                          <ul
+                                  class="main-nav__list main-nav__list--sub{f:if(condition: mainnavItem.active, then: ' show')}">
+                            <f:for each="{mainnavItem.children}" as="mainnavItemSub">
+                              <li
+                                      class="main-nav__item {f:if(condition: mainnavItemSub.active, then: 'main-nav__item--active main-nav__item--active-sub')}">
+                                <a
+                                        class="main-nav__link {f:if(condition: mainnavItemSub.current, then: 'main-nav__link--active main-nav__link--active-sub')}"
+                                        href="{mainnavItemSub.link}" target="{mainnavItemSub.target}"
+                                        title="{mainnavItemSub.title}">
+                                  {mainnavItemSub.title}
+                                </a>
+                              </li>
+                            </f:for>
+                          </ul>
+                        </f:if>
+                      </li>
+                    </f:for>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</html>

@@ -1,0 +1,90 @@
+lib {
+  templateRootPaths {
+    10 = {$plugin.tx_ma_container.settings.view.templateRootPath}
+  }
+  partialRootPathName = {$plugin.tx_ma_container.settings.view.partialRootPath}
+
+  containerProcessor = B13\Container\DataProcessing\ContainerProcessor
+
+  containerDataProcessing {
+    # Add FilesProcessor for the media field
+    20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    20 {
+      references.fieldName = media
+      references.table = tt_content
+      as = media
+    }
+
+    21 = B13\Container\DataProcessing\ContainerProcessor
+    21 {
+      colPos = 21
+      as = gridLeft
+    }
+
+    22 = B13\Container\DataProcessing\ContainerProcessor
+    22 {
+      colPos = 22
+      as = gridRight
+    }
+
+    23 = B13\Container\DataProcessing\ContainerProcessor
+    23 {
+      colPos = 23
+      as = gridCenter
+    }
+
+    24 = B13\Container\DataProcessing\ContainerProcessor
+    24 {
+      colPos = 24
+      as = gridCenterLeft
+    }
+  }
+}
+
+tt_content {
+  100 < lib.contentElement
+  100.templateRootPaths < lib.templateRootPaths
+  100.partialRootPaths.10 < lib.partialRootPathName
+  100.dataProcessing < lib.containerDataProcessing
+  100.templateName = 100
+
+  101 < .100
+  101.templateName >
+  101.templateName = 101
+
+  25-25-25-25 < .100
+  25-25-25-25.templateName >
+  25-25-25-25.templateName = 25-25-25-25
+
+  33-33-33 < .100
+  33-33-33.templateName >
+  33-33-33.templateName = 33-33-33
+
+  33-33-33-float < .100
+  33-33-33-float.templateName >
+  33-33-33-float.templateName = 33-33-33-float
+
+  50-50 < .100
+  50-50.templateName >
+  50-50.templateName = 50-50
+
+  50-50_media < .100
+  50-50_media.templateName >
+  50-50_media.templateName = 50-50_media
+
+  75-25 < .100
+  75-25.templateName >
+  75-25.templateName = 75-25
+
+  25-75 < .100
+  25-75.templateName >
+  25-75.templateName = 25-75
+
+  66-33 < .100
+  66-33.templateName >
+  66-33.templateName = 66-33
+
+  33-66 < .100
+  33-66.templateName >
+  33-66.templateName = 33-66
+}

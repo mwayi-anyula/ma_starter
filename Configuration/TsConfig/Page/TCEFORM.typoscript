@@ -1,0 +1,40 @@
+###########
+# TCEFORM #
+###########
+TCEFORM {
+  #TYPO3 content
+  tt_content {
+    #remove Text & Image and Image CEs. USE Text & Media
+    CType {
+      removeItems = textpic,image
+    }
+
+    colPos {
+      # Define/remove available backend columns
+      # removeItems =
+    }
+
+    # Header labels
+    header_layout {
+      removeItems = 0,5
+      altLabels.1 = Überschrift 1 - Seite
+      altLabels.2 = Überschrift 2 - Abschnitt
+      altLabels.3 = Überschrift 3 - Unterabschnitt
+      altLabels.4 = Überschrift 4 - Unterabschnitt 2
+      altLabels.5 = Überschrift 5 - Unterabschnitt 3
+      altLabels.6 = Überschrift 6 - Unterabschnitt 4
+    }
+
+    layout {
+      removeItems = 1,2,3
+    }
+  }
+
+  # TYPO3 Pages
+  pages {
+    # Layouts
+    layout {
+      removeItems = 1,2,3
+    }
+  }
+}

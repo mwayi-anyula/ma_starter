@@ -1,0 +1,468 @@
+@charset "UTF-8";
+/*!
+ * Standard Styles v1.0.0 - (c) Mwayi Anyula
+ *
+ * Keep the code clean:
+ * - Remove unused directives and useless comments. Preserve tab indention.
+ * - Think!
+ * - Distinguish between block of different levels with different numbers of
+ * empty lines. Mayor blocks three, inferior block two ...
+ * - Document what you are doing. Comments are your friend.
+ * - In general: Optimize readability for humans. Source optimization is done by
+ * TYPO3 or other helpers.
+ * - Prefer relative dimensions ('em' and '%') to static dimensions ('px'), but
+ * think about your decision!
+ * - Do not ever use IDs in your CSS
+ * - Keep the selector specifity LOW! One level down maximum is preferred, e.g.
+ * '.selector .selector', one selector only is best. This would be too much:
+ * '.selector .selector .selector'
+ * - Keep a BEM-inspired style: '.blockOne', '.blockOne__element',
+ * '.blockOne--modifier' .. and JS seperate: '.js-functionality'
+ * - See https://en.bem.info/methodology/ for more information
+ */
+
+/*
+ * GLOBALS
+ */
+html {
+  color: #555;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*
+ * Box-model
+ *
+ * "Ugh. If I say the width is 200px, gosh darn it, it's gonna be a 200px wide
+ * box even if I have 20px of padding." - Paul Irish
+ *
+ * Sources:
+ * - http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * - http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/*
+ * Vertical Rhythm
+ *
+ * To keep a harmonic vertical rhythm, all elements placed in text/content must
+ * have the same bottom margin. Also, it's good to avoid that every element
+ * comes with other margin values, so we set them here - the value is always
+ * base font-size * line height.
+ *
+ * Add all site-specific elements you want to the selector, f.e. .box, .msg or
+ * similar.
+ */
+/*
+h1, .alpha, h2, .beta, h3, .gamma, h4, .delta, h5, .epsilon h6, .zeta,
+ul, ol, dl,
+blockquote, p, address,
+table,
+fieldset, figure,
+pre, hr {
+  margin: 0 0 1.5rem 0;
+}*/
+
+
+/*
+ * Headings
+ *
+ * When we define a headering we also define a corresponding class to go with it.
+ * This allows us to apply, say, class="alpha" to a h3; a double-stranded
+ * headering hierarchy.
+ * Source: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ */
+h1, .alpha,
+h2, .beta,
+h3, .gamma,
+h4, .delta,
+h5, .epsilon,
+h6, .zeta {
+  color: #222;
+  line-height: 1.1;
+}
+
+h1, .alpha {
+}
+
+h2, .beta {
+}
+
+h3, .gamma {
+}
+
+h4, .delta {
+}
+
+h5, .epsilon {
+}
+
+h6, .zeta {
+}
+
+/*
+ * HELPER & COMPONENTS
+ *
+ * Helpers and components are globally available elements that only need to be
+ * defined/styled on time and than may be issued where ever needed. Examples
+ * would be the often used "messaging system" and our container, row and width
+ * classes. See Snippets.css for further examples.
+ */
+
+/*
+ * Page layout
+ */
+/*
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}*/
+
+/*
+ * Powermail styling
+ */
+.powermail_input.powermail_field_error,
+.powermail_textarea.powermail_field_error,
+.radio.powermail_field_error, .powermail_checkbox.powermail_field_error {
+  border-color: #f00;
+}
+
+.powermail-errors-list.filled {
+  color: #fff;
+  list-style: none;
+  margin: 0;
+  font-size: 0.75rem;
+  display: block;
+  width: auto;
+  float: left;
+  padding: 0.15rem 0.5rem;
+  background: #f00;
+}
+
+.checkbox.powermail_field_error label {
+  color: #f00!important;
+}
+
+.powermail-errors-list > li {
+  margin-left: 0!important;
+  padding-left: 0 !important;
+}
+
+textarea + .powermail-errors-list {
+  margin-top: -.5rem!important;
+}
+
+/*
+ * HEAD
+ */
+.head {
+}
+
+
+/*
+ * TEASER
+ */
+.teaser {
+}
+
+.teaser img {
+  width: 100%;
+}
+
+.teaser .ce-gallery figure {
+  display: block;
+}
+
+/*
+ * LEFT SIDEBAR
+ */
+.sidebar--left {
+}
+
+
+
+/*
+ * MAIN AREA
+ */
+.main {
+}
+
+.main > [id^="c"], .main > .prose > [id^="c"]{
+  margin-bottom: 2rem;
+}
+
+.frame > :last-child {
+  margin-bottom: 0;
+}
+
+
+/*
+ * RIGHT SIDEBAR
+ */
+.sidebar--right {
+}
+
+
+
+/*
+ * FOOTER
+ */
+.foot {
+}
+
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+
+.hamburger {
+  padding: 0 4px 0 0;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-property: opacity, -webkit-filter;
+  transition-property: opacity, -webkit-filter;
+  -o-transition-property: opacity, filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #000;
+}
+
+.hamburger-box {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  bottom: -8px;
+}
+
+
+/*
+   * Spin
+   */
+
+.hamburger--spin .hamburger-inner {
+  -webkit-transition-duration: 0.22s;
+  -o-transition-duration: 0.22s;
+  transition-duration: 0.22s;
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin .hamburger-inner::before {
+  -webkit-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  -o-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+
+.hamburger--spin .hamburger-inner::after {
+  -webkit-transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin.is-active .hamburger-inner {
+  -webkit-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -webkit-transition-delay: 0.12s;
+  -o-transition-delay: 0.12s;
+  transition-delay: 0.12s;
+  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--spin.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  -webkit-transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  -o-transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+
+.hamburger--spin.is-active .hamburger-inner::after {
+  bottom: 0;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+
+/*
+ * PRINT
+ */
+@media print {
+  /*
+   * GENERAL
+   */
+  html {
+    color: #000; /* Saves ink. */
+  }
+}
+
+
+/*@tailwind base;
+@tailwind components;*/
+
+.grid {
+  display: grid
+}
+
+.w-full {
+  width: 100%
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+}
+
+.gap-4 {
+  gap: 1rem
+}
+
+.bg-left {
+  background-position: left
+}
+
+.bg-right {
+  background-position: right
+}
+
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2
+  }
+
+  .md\:col-span-3 {
+    grid-column: span 3 / span 3
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr))
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr))
+  }
+
+  .lg\:gap-8 {
+    gap: 2rem
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:hidden {
+    display: none
+  }
+
+  .xl\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+}

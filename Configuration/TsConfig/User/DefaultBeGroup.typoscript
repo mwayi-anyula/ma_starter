@@ -1,0 +1,31 @@
+####################
+# Default BE group #
+####################
+options {
+  clearCache {
+    pages = 1
+    all = 1
+  }
+
+  pageTree {
+    showPageIdWithTitle = 1
+    showDomainNameWithTitle = 1
+  }
+
+  file_list {
+    enableDisplayBigControlPanel = 1
+    enableDisplayThumbnails = 1
+    enableClipBoard = 1
+    uploader.defaultAction = Replace
+  }
+}
+
+setup {
+  default {
+    thumbnailsByDefault = 1
+  }
+
+  override {
+    edit_docModuleUpload = 0
+  }
+}

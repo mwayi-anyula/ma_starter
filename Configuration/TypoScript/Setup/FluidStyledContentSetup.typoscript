@@ -1,0 +1,247 @@
+#####################################################
+# Responsive flex-solution for fluid_styled_content #
+#####################################################
+plugin.tx_frontend._CSS_DEFAULT_STYLE (
+    .ce-align-left { text-align: left; }
+    .ce-align-center { text-align: center; }
+    .ce-align-right { text-align: right; }
+
+    .ce-table td, .ce-table th { vertical-align: top; }
+
+    .ce-textpic:after {
+      display: block;
+      clear: both;
+      content: "";
+    }
+
+    .ce-gallery figure { display: table; margin: 0; }
+    .ce-gallery figcaption { display: table-caption; caption-side: bottom; }
+    .ce-gallery img { display: block; }
+    .ce-gallery iframe { border-width: 0; }
+    .ce-border img,
+    .ce-border iframe {
+        border: {$styles.content.textmedia.borderWidth}px solid {$styles.content.textmedia.borderColor};
+        padding: {$styles.content.textmedia.borderPadding}px;
+    }
+
+    /*
+     * Responsive textpic
+     */
+
+    /* Add margins */
+    .ce-intext.ce-right .ce-gallery,
+    .ce-intext.ce-left .ce-gallery,
+    .ce-above .ce-gallery {
+      margin-bottom: {$styles.content.textmedia.textMargin}px;
+    }
+
+    /* Flexbox row */
+    .ce-gallery .ce-row {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-left: -{$styles.content.textmedia.columnSpacing}px;
+    }
+
+    .ce-gallery .ce-column {
+      /* `flex: 1` is needed for responsive videos, but in turn requires manual
+       * break points, `flex-wrap: wrap` doesn't work with it.
+       */
+      padding-left: {$styles.content.textmedia.columnSpacing}px;
+      margin-bottom: {$styles.content.textmedia.columnSpacing}px;
+
+      box-sizing: border-box;
+    }
+
+    .ce-gallery .ce-row:last-child .ce-column:last-child {
+      margin-bottom: 0;
+    }
+
+    .ce-gallery[data-ce-columns="1"] .ce-column {
+      -ms-flex-preferred-size: auto;
+          flex-basis: auto;
+          width: 100%;
+    }
+
+    .ce-gallery[data-ce-columns="2"] .ce-column {
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+          width: 100%;
+    }
+
+    .ce-gallery[data-ce-columns="3"] .ce-column {
+      -ms-flex-preferred-size: 33.333333%;
+          flex-basis: 33.333333%;
+          width: 100%;
+    }
+
+    .ce-gallery[data-ce-columns="4"] .ce-column {
+      -ms-flex-preferred-size: 25%;
+          flex-basis: 25%;
+          width: 100%;
+    }
+
+    .ce-gallery[data-ce-columns="5"] .ce-column {
+      -ms-flex-preferred-size: 20%;
+          flex-basis: 20%;
+          width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .ce-gallery[data-ce-columns="4"] .ce-row,
+      .ce-gallery[data-ce-columns="5"] .ce-row {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+      }
+
+     .ce-gallery[data-ce-columns="4"] .ce-column {
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%
+      }
+    }
+
+    @media (max-width: 600px) {
+      /* IE 10+ fix */
+      _:-ms-input-placeholder, :root .ce-gallery[data-ce-columns="3"] .ce-column,
+      _:-ms-input-placeholder, :root .ce-gallery[data-ce-columns="2"] .ce-column,
+      _:-ms-input-placeholder, :root .ce-nowrap .ce-gallery[data-ce-columns="1"] .ce-column {
+        flex-basis: auto;
+      }
+
+      .ce-gallery[data-ce-columns="3"] .ce-row,
+      .ce-gallery[data-ce-columns="2"] .ce-row,
+      .ce-nowrap .ce-gallery[data-ce-columns="1"] .ce-row {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
+
+      .ce-gallery[data-ce-columns="4"] .ce-column {
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%
+      }
+    }
+
+    /* Behaviour of image and text */
+    @media (min-width: 600px) {
+      /* In text */
+      .ce-intext.ce-right .ce-gallery,.ce-intext.ce-left .ce-gallery {
+          margin-bottom:0;
+      }
+
+      .ce-intext.ce-left .ce-gallery {
+          float: left;
+          margin-right: 20px;
+      }
+
+      .ce-intext.ce-right .ce-gallery {
+          float: right;
+          margin-left: 20px;
+      }
+
+      /* Beside text */
+      .ce-intext.ce-nowrap {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+      }
+
+      .ce-intext.ce-nowrap .ce-bodytext {
+          -webkit-box-flex: 1;
+              -ms-flex: 1 1 100%;
+                  flex: 1 1 100%;
+      }
+
+
+      .ce-intext.ce-nowrap .ce-gallery {
+          float: none;
+      }
+
+      /* IE 10+ fix */
+      _:-ms-input-placeholder, :root .ce-intext.ce-nowrap .ce-column {
+        flex-basis: auto;
+      }
+
+      .ce-intext.ce-right.ce-nowrap .ce-bodytext {
+          -webkit-box-ordinal-group: 2;
+              -ms-flex-order: 1;
+                  order: 1;
+      }
+
+      .ce-intext.ce-right.ce-nowrap .ce-gallery {
+          -webkit-box-ordinal-group: 3;
+              -ms-flex-order: 2;
+                  order: 2;
+      }
+    }
+
+    /* Responsive video */
+    .ce-gallery .ce-column .video {
+      display: block;
+    }
+
+    .ce-gallery .ce-column .video-embed-item {
+      width: 100%;
+    }
+
+    .ce-gallery .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .ce-gallery .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+
+    /* Headline */
+    .ce-headline-left { text-align: left; }
+    .ce-headline-center { text-align: center; }
+    .ce-headline-right { text-align: right; }
+
+    /* Uploads */
+    .ce-uploads { margin: 0; padding: 0; }
+    .ce-uploads li { list-style: none outside none; margin: 1em 0; }
+    .ce-uploads img { float: left; padding-right: 1em; vertical-align: top; }
+    .ce-uploads span { display: block; }
+
+    /* Table */
+    .ce-table { width: 100%; max-width: 100%; }
+    .ce-table th, .ce-table td { padding: 0.5em 0.75em; vertical-align: top; }
+    .ce-table thead th { border-bottom: 2px solid #dadada; }
+    .ce-table th, .ce-table td { border-top: 1px solid #dadada; }
+    .ce-table-striped tbody tr:nth-of-type(odd) { background-color: rgba(0,0,0,.05); }
+    .ce-table-bordered th, .ce-table-bordered td { border: 1px solid #dadada; }
+
+    /* Space */
+    /* Double selectors are used to overcome the selector specifity (and order) of our `.frame` default margin */
+    .frame-space-before-extra-small.frame-space-before-extra-small { margin-top: 1em; }
+    .frame-space-before-small.frame-space-before-small { margin-top: 2em; }
+    .frame-space-before-medium.frame-space-before-medium { margin-top: 3em; }
+    .frame-space-before-large.frame-space-before-large { margin-top: 4em; }
+    .frame-space-before-extra-large.frame-space-before-extra-large { margin-top: 5em; }
+    .frame-space-after-extra-small.frame-space-after-extra-small { margin-bottom: 1em; }
+    .frame-space-after-small.frame-space-after-small { margin-bottom: 2em; }
+    .frame-space-after-medium.frame-space-after-medium { margin-bottom: 3em; }
+    .frame-space-after-large.frame-space-after-large { margin-bottom: 4em; }
+    .frame-space-after-extra-large.frame-space-after-extra-large { margin-bottom: 5em; }
+
+    /* Frame */
+    .frame-ruler-before:before { content: ''; display: block; border-top: 1px solid rgba(0,0,0,0.25); margin-bottom: 2em; }
+    .frame-ruler-after:after { content: ''; display: block; border-bottom: 1px solid rgba(0,0,0,0.25); margin-top: 2em; }
+    .frame-indent { margin-left: 15%; margin-right: 15%; }
+    .frame-indent-left { margin-left: 33%; }
+    .frame-indent-right { margin-right: 33%; }
+)

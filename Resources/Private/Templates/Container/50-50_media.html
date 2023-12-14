@@ -1,0 +1,127 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:comment>
+  Grid (50|50) with Media
+</f:comment>
+<f:section name="Main">
+  <f:if condition="!{gridLeft} || !{gridRight} && {media.0}">
+    <f:then>
+      <f:if condition="{media.0}">
+        <div class="grid-50-50-media grid-{data.pid}-{data.uid}{f:if(condition: '{data.frame_class} == \'default\'', then: '', else: ' {data.frame_class}')} {f:if(condition: '{gridLeft}', then: '', else: 'bg-left')}{f:if(condition: '{gridRight}', then: '', else: ' bg-right')} {f:if(condition: '{data.space_before_class}', then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: '{data.space_after_class}', then: ' frame-space-after-{data.space_after_class}')}{f:if(condition: data.justify_content, then: ' {data.justify_content}')}{f:if(condition: data.align_items, then: ' {data.align_items}')}{f:if(condition: data.column_gap, then:  ' {data.column_gap}', else: ' gap-4 lg:gap-8')}">
+          <f:if condition="!{gridLeft} || !{gridRight}">
+
+
+            <div class="grid xl:grid-cols-2 gap-4 lg:gap-8">
+              <div class="{f:if(condition: '{gridLeft}', then: '', else: 'bg-space')}">
+                <f:if condition="!{gridLeft}">
+                  <f:if condition="{media.0.originalFile.properties.extension} == 'youtube' || {media.0.originalFile.properties.extension} == 'vimeo' || {media.0.originalFile.properties.extension} == 'mp4' || {media.0.originalFile.properties.extension} == 'wmv' || {media.0.originalFile.properties.extension} == 'm4v' || {media.0.originalFile.properties.extension} == 'mkv' || {media.0.originalFile.properties.extension} == 'mov' || {media.0.originalFile.properties.extension} == 'avi'">
+                    <f:then>
+                      <f:if condition="{media.0.originalFile.properties.extension} == 'youtube' || {media.0.originalFile.properties.extension} == 'vimeo'">
+                        <f:then>
+                          <div class="bg-section-img">
+                            <div class="grid--video-container">
+                              <f:media class="grid--video__iframe" file="{media.0}" alt="{media.0.alternative}" title="{media.0.title}" width="1000" additionalConfig="{controls: false, relatedVideos: 0}" />
+                            </div>
+                          </div>
+                        </f:then>
+                        <f:else>
+                          <div class="bg-section-img">
+                            <div class="grid--video-container">
+                              <f:if condition="{media.1}">
+                                <f:then>
+                                  <f:variable name="poster">{f:uri.image(image: media.1, width: 500)}</f:variable>
+                                  <f:media file="{media.0}" alt="{media.0.alternative}" title="{media.0.title}" class="grid--video__video video-embed-item" width="1000" additionalAttributes="{poster: poster}" />
+                                </f:then>
+                                <f:else>
+                                  <f:media file="{media.0}" alt="{media.0.alternative}" title="{media.0.title}" class="grid--video__video video-embed-item" width="1000" />
+                                </f:else>
+                              </f:if>
+                            </div>
+                          </div>
+                        </f:else>
+                      </f:if>
+                    </f:then>
+                    <f:else>
+                      <img class="bg-section-img xl:hidden" src="{f:uri.image(image: media.0, width: 1000)}" alt="{media.0.originalFile.name}">
+                      <style>
+                        @media (min-width: 1200px) {
+                          .grid-<f:format.raw>{data.pid}-{data.uid}</f:format.raw> .bg-space {
+                                                                       background-image: url(<f:format.raw>{f:uri.image(image: media.0, width: 900)}</f:format.raw>), url(<f:format.raw>{f:uri.image(image: media.0, width: 30)}</f:format.raw>);
+                        }
+                        }
+                      </style>
+                    </f:else>
+                  </f:if>
+                </f:if>
+                <f:for each="{gridLeft}" as="child">
+                  {child.renderedContent -> f:format.raw()}
+                </f:for>
+              </div>
+              <div class="{f:if(condition: '{gridRight}', then: '', else: 'bg-space')}">
+                <f:if condition="!{gridRight}">
+                  <f:if condition="{media.0.originalFile.properties.extension} == 'youtube' || {media.0.originalFile.properties.extension} == 'vimeo' || {media.0.originalFile.properties.extension} == 'mp4' || {media.0.originalFile.properties.extension} == 'wmv' || {media.0.originalFile.properties.extension} == 'm4v' || {media.0.originalFile.properties.extension} == 'mkv' || {media.0.originalFile.properties.extension} == 'mov' || {media.0.originalFile.properties.extension} == 'avi'">
+                    <f:then>
+                      <f:if condition="{media.0.originalFile.properties.extension} == 'youtube' || {media.0.originalFile.properties.extension} == 'vimeo'">
+                        <f:then>
+                          <div class="bg-section-img">
+                            <div class="grid--video-container">
+                              <f:media class="grid--video__iframe" file="{media.0}" alt="{media.0.alternative}" title="{media.0.title}" width="1000" additionalConfig="{controls: false, relatedVideos: 0}" />
+                            </div>
+                          </div>
+                        </f:then>
+                        <f:else>
+                          <div class="bg-section-img">
+                            <div class="grid--video-container">
+                              <f:if condition="{media.1}">
+                                <f:then>
+                                  <f:variable name="poster">{f:uri.image(image: media.1, width: 500)}</f:variable>
+                                  <f:media file="{media.0}" alt="{media.0.alternative}" title="{media.0.title}" class="grid--video__video video-embed-item" width="1000" additionalAttributes="{poster: poster}" />
+                                </f:then>
+                                <f:else>
+                                  <f:media file="{media.0}" alt="{media.0.alternative}" title="{media.0.title}" class="grid--video__video video-embed-item" width="1000" />
+                                </f:else>
+                              </f:if>
+                            </div>
+                          </div>
+                        </f:else>
+                      </f:if>
+                    </f:then>
+                    <f:else>
+                      <img class="bg-section-img xl:hidden" src="{f:uri.image(image: media.0, width: 1000)}" alt="{media.0.originalFile.name}">
+                      <style>
+                        @media (min-width: 1200px) {
+                          .grid-<f:format.raw>{data.pid}-{data.uid}</f:format.raw> .bg-space {
+                                                                       background-image: url(<f:format.raw>{f:uri.image(image: media.0, width: 900)}</f:format.raw>), url(<f:format.raw>{f:uri.image(image: media.0, width: 30)}</f:format.raw>);
+                        }
+                        }
+                      </style>
+                    </f:else>
+                  </f:if>
+                </f:if>
+                <f:for each="{gridRight}" as="child">
+                  {child.renderedContent -> f:format.raw()}
+                </f:for>
+              </div>
+            </div>
+            </f:if>
+        </div>
+      </f:if>
+    </f:then>
+    <f:else>
+      <div class="grid md:grid-cols-2 {f:if(condition: '{data.space_before_class}', then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: '{data.space_after_class}', then: ' frame-space-after-{data.space_after_class}')}">
+        <div>
+          <f:for each="{gridLeft}" as="child">
+            {child.renderedContent -> f:format.raw()}
+          </f:for>
+        </div>
+        <div>
+          <f:for each="{gridRight}" as="child">
+            {child.renderedContent -> f:format.raw()}
+          </f:for>
+        </div>
+      </div>
+    </f:else>
+  </f:if>
+  <f:render partial="Styling" arguments="{_all}"/>
+</f:section>
+</html>

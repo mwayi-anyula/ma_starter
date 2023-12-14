@@ -1,0 +1,214 @@
+# Re-usable column definitions
+disallowedCTypes = gridelements_pi1,100,101,50-50,25-25-25-25,33-33-33,33-33-33-float,50-50,50-50_media,75-25,25-75,66-33,33-66
+
+teaser {
+  name = LLL:EXT:ma_starter/Resources/Private/Language/locallang_be.xlf:backend_layout.column.teaser
+  colPos = 3
+  allowed {
+    CType = ma_slider,image
+  }
+
+  maxitems = 1
+  colspan = 3
+}
+
+mainContent {
+  name = LLL:EXT:ma_starter/Resources/Private/Language/locallang_be.xlf:backend_layout.column.main_content
+  colPos = 0
+  allowed = *
+  allowedGridType = *
+  colspan = 3
+}
+
+sidebarLeft {
+  name = LLL:EXT:ma_starter/Resources/Private/Language/locallang_be.xlf:backend_layout.column.sidebar_left
+  colPos = 1
+  disallowed {
+    CType =< disallowedCTypes
+  }
+
+  colspan = 1
+}
+
+sidebarRight {
+  name = LLL:EXT:ma_starter/Resources/Private/Language/locallang_be.xlf:backend_layout.column.sidebar_right
+  colPos = 2
+  disallowed {
+    CType =< disallowedCTypes
+  }
+
+  colspan = 1
+}
+
+# BackendLayouts
+mod.web_layout.BackendLayouts {
+  SingleColumnPage {
+    title = LLL:EXT:ma_starter/Resources/Private/Language/locallang_be.xlf:backend_layout.single
+    icon = EXT:ma_starter/Resources/Public/ApplicationAssets/BackendLayouts/SingleColumnPage.png
+    config {
+      backend_layout {
+        colCount = 3
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 < mainContent
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  SingleColumnTeaserPage {
+    title = LLL:EXT:ma_starter/Resources/Private/Language/locallang_be.xlf:backend_layout.single_teaser
+    icon = EXT:ma_starter/Resources/Public/ApplicationAssets/BackendLayouts/SingleColumnTeaserPage.png
+    config {
+      backend_layout {
+        colCount = 3
+        rowCount = 2
+        rows {
+          1.columns.1 < teaser
+          2.columns.1 < mainContent
+        }
+      }
+    }
+  }
+
+  TwoColumnLeftPage {
+    title = LLL:EXT:ma_starter/Resources/Private/Language/locallang_be.xlf:backend_layout.two_column_left
+    icon = EXT:ma_starter/Resources/Public/ApplicationAssets/BackendLayouts/TwoColumnLeftPage.png
+    config {
+      backend_layout {
+        colCount = 4
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 < sidebarLeft
+              2 < mainContent
+            }
+          }
+        }
+      }
+    }
+  }
+
+  TwoColumnLeftTeaserPage {
+    title = LLL:EXT:ma_starter/Resources/Private/Language/locallang_be.xlf:backend_layout.two_column_left_teaser
+    icon = EXT:ma_starter/Resources/Public/ApplicationAssets/BackendLayouts/TwoColumnLeftTeaserPage.png
+    config {
+      backend_layout {
+        colCount = 4
+        rowCount = 2
+        rows {
+          1 {
+            columns{
+              1 < teaser
+              1.colspan = 4
+            }
+          }
+          2 {
+            columns {
+              1 < sidebarLeft
+              2 < mainContent
+            }
+          }
+        }
+      }
+    }
+  }
+
+  TwoColumnRightPage {
+    title = LLL:EXT:ma_starter/Resources/Private/Language/locallang_be.xlf:backend_layout.two_column_right
+    icon = EXT:ma_starter/Resources/Public/ApplicationAssets/BackendLayouts/TwoColumnRightPage.png
+    config {
+      backend_layout {
+        colCount = 4
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 < mainContent
+              2 < sidebarRight
+            }
+          }
+        }
+      }
+    }
+  }
+
+  TwoColumnRightTeaserPage {
+    title = LLL:EXT:ma_starter/Resources/Private/Language/locallang_be.xlf:backend_layout.two_column_right_teaser
+    icon = EXT:ma_starter/Resources/Public/ApplicationAssets/BackendLayouts/TwoColumnRightTeaserPage.png
+    config {
+      backend_layout {
+        colCount = 4
+        rowCount = 2
+        rows {
+          1 {
+            columns {
+              1 < teaser
+              1.colspan = 4
+            }
+          }
+          2 {
+            columns {
+              1 < mainContent
+              2 < sidebarRight
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ThreeColumnPage {
+    title = LLL:EXT:ma_starter/Resources/Private/Language/locallang_be.xlf:backend_layout.three_column
+    icon = EXT:ma_starter/Resources/Public/ApplicationAssets/BackendLayouts/ThreeColumnPage.png
+    config {
+      backend_layout {
+        colCount = 5
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 < sidebarLeft
+              2 < mainContent
+              2.colspan = 5
+              3 < sidebarRight
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ThreeColumnTeaserPage {
+    title = LLL:EXT:ma_starter/Resources/Private/Language/locallang_be.xlf:backend_layout.three_column_teaser
+    icon = EXT:ma_starter/Resources/Public/ApplicationAssets/BackendLayouts/ThreeColumnTeaserPage.png
+    config {
+      backend_layout {
+        colCount = 5
+        rowCount = 2
+        rows {
+          1 {
+            columns{
+              1 < teaser
+              1.colspan = 5
+            }
+          }
+          2 {
+            columns {
+              1 < sidebarLeft
+              2 < mainContent
+              2.colSpan = 5
+              3 < sidebarRight
+            }
+          }
+        }
+      }
+    }
+  }
+}

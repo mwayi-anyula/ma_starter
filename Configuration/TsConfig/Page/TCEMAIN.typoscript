@@ -1,0 +1,30 @@
+###########
+# TCEMAIN #
+###########
+TCEMAIN {
+  table {
+    pages {
+      disablePrependAtCopy = 0
+      disableHideAtCopy = 0
+    }
+
+    tt_content {
+      disablePrependAtCopy = 0
+      disableHideAtCopy = 0
+    }
+
+    /*tx_news_domain_model_news {
+      disablePrependAtCopy = 0
+      disableHideAtCopy = 0
+    }*/
+  }
+
+  permissions {
+    #User can do anything (default):
+    user = show,edit,delete,new,editcontent
+    #Group can do anything
+    group = show,edit,delete,new,editcontent
+    #Everybody can do/see nothing
+    everybody = 0
+  }
+}

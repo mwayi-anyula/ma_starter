@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <f:if condition="{media.0} or {data.background_color} or {data.border_color}">
+        <f:if condition="{media.0} && !{data.background_color}">
+            <f:asset.css identifier="ma_container1{data.uid}" priority="true">
+                #c<f:format.raw>{data.uid}</f:format.raw> {
+                <f:format.raw>{f:if(condition: '{media.0}', then: 'background-image: url( {f:uri.image(image: media.0, width: 1200)}), url({f:uri.image(image: media.0, width: 30)}); background-size: cover;')}</f:format.raw>
+                padding: 1rem;
+                }
+            </f:asset.css>
+        </f:if>
+        <f:if condition="{media.0} && {data.background_color}">
+            <f:asset.css identifier="ma_container2{data.uid}" priority="true">
+                #c<f:format.raw>{data.uid}</f:format.raw> {
+                <f:format.raw>{f:if(condition: '{media.0} && {data.background_color}', then: 'background-image: linear-gradient({data.background_color}80, {data.background_color}bf), url( {f:uri.image(image: media.0, width: 1200)}), url({f:uri.image(image: media.0, width: 30)}); background-size: cover;')}</f:format.raw>
+                padding: 1rem;
+                }
+            </f:asset.css>
+        </f:if>
+        <f:asset.css identifier="ma_container3{data.uid}" priority="true">
+            #c<f:format.raw>{data.uid}</f:format.raw> {
+            padding: 1rem;
+            <f:format.raw>{f:if(condition: data.background_color, then: 'background-color:{data.background_color};')}</f:format.raw>
+            <f:format.raw>{f:if(condition: data.border_color, then: 'border: 1px solid {data.border_color};')}</f:format.raw>
+                }
+        </f:asset.css>
+    </f:if>
+
+    <f:if condition="{data.header_color} or {data.text_color} or {data.link_color}">
+        <f:asset.css identifier="ma_container4{data.uid}" priority="true">
+            #c<f:format.raw>{data.uid}</f:format.raw> > .heading > :is(h1, h2, h3, h4, h5, h6),
+            #c<f:format.raw>{data.uid}</f:format.raw> .heading > :is(h1, h2, h3, h4, h5, h6) {
+            <f:format.raw>{f:if(condition: '{data.header_color}', then: 'color:{data.header_color}!important;')}</f:format.raw>
+            }
+
+            #c<f:format.raw>{data.uid}</f:format.raw>,
+            #c<f:format.raw>{data.uid}</f:format.raw> .heading > :is(h1, h2, h3, h4, h5, h6) {
+            <f:format.raw>{f:if(condition: '{data.text_color}', then: 'color:{data.text_color} !important;')}</f:format.raw>
+            }
+
+            #c<f:format.raw>{data.uid}</f:format.raw> a {
+            <f:format.raw>{f:if(condition: '{data.link_color}', then: 'color:{data.link_color} !important';)}</f:format.raw>
+            }
+        </f:asset.css>
+    </f:if>
+</html>

@@ -1,0 +1,84 @@
+site {
+  text {
+    short-form = {$site.text.short-form}
+  }
+
+  colors {
+    default = {$site.colors.default}
+  }
+
+  images {
+    logo = {$site.images.logo}
+    logoText = {$site.images.logoText}
+    logoMini = {$site.images.logoMini}
+  }
+
+  snippets {
+    defaultTeaser = {$site.snippets.defaultTeaser}
+    legalNav = {$site.snippets.legalNav}
+    topNav = {$site.snippets.topNav}
+    contactPage = {$site.snippets.contactPage}
+    footerContactForm = {$site.snippets.footerContactForm}
+  }
+
+  extensions {
+    news {
+      listPid = {$site.extensions.news.listPid}
+      storagePid = {$site.extensions.news.storagePid}
+      detailPid = {$site.extensions.news.detailPid}
+      dummyImage = {$site.extensions.news.dummyImage}
+    }
+
+    eventnews {
+      listPid = {$site.extensions.eventnews.listPid}
+      storagePid = {$site.extensions.eventnews.storagePid}
+      detailPid = {$site.extensions.eventnews.detailPid}
+      dummyImage = {$site.extensions.eventnews.dummyImage}
+    }
+
+    ke_search {
+      searchFormUid = {$site.extensions.ke_search.searchFormUid}
+      resultsPid = {$site.extensions.ke_search.resultsPid}
+    }
+
+    powermail {
+      defaultName = {$site.extensions.powermail.defaultName}
+      defaultEmail = {$site.extensions.powermail.defaultEmail}
+      formSenderEmail = {$site.extensions.powermail.formSenderEmail}
+      defaultReceiverSubject = {$site.extensions.powermail.defaultReceiverSubject}
+      defaultSenderSubject = {$site.extensions.powermail.defaultSenderSubject}
+      storagePid = {$site.extensions.powermail.storagePid}
+    }
+
+    ttaddress {
+      storagePid = {$site.extensions.ttaddress.storagePid}
+      dummyImage = {$site.extensions.ttaddress.dummyImage}
+    }
+  }
+
+  socialMedia {
+    xing = {$site.socialMedia.xing}
+    facebook = {$site.socialMedia.facebook}
+    twitter = {$site.socialMedia.twitter}
+    youtube = {$site.socialMedia.youtube}
+    instagram = {$site.socialMedia.instagram}
+  }
+
+  metaData {
+    title = {$site.metaData.title}
+    description = {$site.metaData.description}
+    keywords = {$site.metaData.keywords}
+    email = {$site.metaData.email}
+    phone = {$site.metaData.phone}
+    fax = {$site.metaData.fax}
+    latitude = {$site.metaData.latitude}
+    longitude = {$site.metaData.longitude}
+    street = {$site.metaData.street}
+    city = {$site.metaData.city}
+    locale = {$site.metaData.locale}
+    region = {$site.metaData.region}
+    zip = {$site.metaData.zip}
+    country = {$site.metaData.country}
+    image = {$site.metaData.image}
+  }
+}

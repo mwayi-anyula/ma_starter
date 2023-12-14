@@ -1,0 +1,49 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="{layout}"/>
+
+<f:section name="HeaderSection">
+  <header class="head">
+    <div class="container mx-auto max-w-[1200px] px-2 sm:px-4 xl:px-0">
+      <f:render partial="Header" />
+      <f:cObject typoscriptObjectPath="lib.head" />
+    </div>
+  </header>
+</f:section>
+
+<f:section name="TeaserContent">
+  <div class="teaser py-4 md:py-8">
+    <div class="container mx-auto max-w-[1200px] px-2 sm:px-4 xl:px-0">
+      {teaser->f:format.raw()}
+    </div>
+  </div>
+</f:section>
+
+<f:section name="LeftSidebarContent">
+  <div class="prose">
+  {lbar->f:format.raw()}
+  <f:cObject typoscriptObjectPath="lib.lbar" />
+  </div>
+</f:section>
+
+<f:section name="MainContent">
+  <div class="prose">
+  <!--TYPO3SEARCH_begin-->{main->f:format.raw()}<!--TYPO3SEARCH_end-->
+  </div>
+</f:section>
+
+<f:section name="RightSidebarContent">
+  <div class="prose">
+  {rbar->f:format.raw()}
+  <f:cObject typoscriptObjectPath="lib.rbar" />
+  </div>
+</f:section>
+
+<f:section name="FooterSection">
+  <footer class="foot">
+    <div class="container mx-auto max-w-[1200px] px-2 sm:px-4 xl:px-0">
+      <f:render partial="Footer" />
+      <f:cObject typoscriptObjectPath="lib.foot" />
+    </div>
+  </footer>
+</f:section>
+</html>

@@ -1,0 +1,23 @@
+###################
+# Default editors #
+###################
+admPanel {
+  hide = 0
+  enable.all = 0
+}
+
+options {
+  clearCache {
+    all = 0
+  }
+
+  contextMenu {
+    table {
+      pages {
+        disableItems = exportT3d,importT3d,mountAsTreeroot
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,65 @@
+###########
+# Globals #
+###########
+globals {
+  concatenateCss = 1
+  compressCss = 1
+  concatenateJs = 1
+  compressJs = 1
+
+  # Note: indexed_search does not index if no_cache = 1 is set.
+  no_cache = 1
+
+  pageTitleSplitChar = -
+
+  # Activate admin panel
+  admPanel = 0
+
+  # Analytics code
+  # Multi-line constants are not supported. Insert as single line including <script></script> tag!
+  analytics = <!-- Analytics code goes here. Remove if Analytics is not required. -->
+
+  # Content object exception handler
+  # Believe it or not! But: Multi-line constants are not supported. Insert as single line!
+  contentObjectExceptionHandler = 1
+  contentObjectExceptionHandler.errorMessage = <div class="message message-error"><p><b>Ein Fehler ist aufgetreten</b> (%s)</p><p>Bitte versuchen Sie es später noch einmal. Sollte dieser Fehler weiterhin auftreten, kontaktieren Sie uns bitte über unser Kontaktformular oder per E-Mail und teilen uns den angezeigten Fehlercode mit.</p></div>
+}
+
+
+
+#########################
+# Globals (Development) #
+#########################
+[applicationContext == "Development"]
+  globals {
+    concatenateCss = 0
+    compressCss = 0
+    concatenateJs = 0
+    compressJs = 0
+
+    # Note: indexed_search does not index if no_cache = 1 is set.
+    no_cache = 0
+
+    # Activate admin panel
+    admPanel = 1
+
+    analytics = <!-- Analytics is not used in developement. -->
+
+    # Content object exception handler
+    contentObjectExceptionHandler = 0
+  }
+[end]
+
+
+
+####################################
+# Language configuration (example) #
+####################################
+/*
+[siteLanguage("locale") == "en_GB.UTF-8"]
+  globals {
+    # Content object exception handler
+    contentObjectExceptionHandler.errorMessage = <div class="message message-error"><p><b>An error has occured</b> (%s)</p><p>Please try again later. If this error persists, please contact us via contact form or e-mail with the error code displayed above.</p></div>
+  }
+[end]
+*/

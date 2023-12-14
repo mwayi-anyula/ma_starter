@@ -1,0 +1,12 @@
+plugin {
+  tx_ma_container {
+    settings  {
+      view {
+        templateRootPath = EXT:ma_starter/Resources/Private/Templates/Container/
+        partialRootPath = EXT:ma_starter/Resources/Private/Partials/Container/
+        layoutRootPath = EXT:ma_starter/Resources/Private/Layouts/Container/
+        #stylesPath = EXT:ma_starter/Resources/Public/Styles/Styles.css
+      }
+    }
+  }
+}

@@ -1,0 +1,219 @@
+###############
+# Page object #
+###############
+page = PAGE
+page {
+  typeNum = 0
+  shortcutIcon = EXT:ma_starter/Resources/Public/Public/ApplicationAssets/AppIcons/favicon-32x32.png
+
+  10 = FLUIDTEMPLATE
+  10 {
+    file = EXT:ma_starter/Resources/Private/Templates/Page/Page.html
+    partialRootPath = EXT:ma_starter/Resources/Private/Partials/Page/
+    layoutRootPath = EXT:ma_starter/Resources/Private/Layouts/Page/
+
+    settings {
+      site < site
+    }
+
+    variables {
+      teaser < styles.content.get
+      teaser.select.where = colPos=3
+      teaser.stdWrap.ifEmpty.cObject = RECORDS
+      teaser.stdWrap.ifEmpty.cObject {
+        tables = tt_content
+        source = {$site.snippets.defaultTeaser}
+        dontCheckPid = 1
+      }
+
+      lbar < styles.content.get
+      lbar.select.where = colPos=1
+
+      main < styles.content.get
+
+      rbar < styles.content.get
+      rbar.select.where = colPos=2
+
+      layout = CASE
+      layout {
+        key.data = pagelayout
+
+        default = TEXT
+        default.value = SingleColumnPage
+
+        pagets__SingleColumnPage < .default
+
+        pagets__SingleColumnTeaserPage = TEXT
+        pagets__SingleColumnTeaserPage.value = SingleColumnTeaserPage
+
+        pagets__TwoColumnLeftPage = TEXT
+        pagets__TwoColumnLeftPage.value = TwoColumnLeftPage
+
+        pagets__TwoColumnLeftTeaserPage = TEXT
+        pagets__TwoColumnLeftTeaserPage.value = TwoColumnLeftTeaserPage
+
+        pagets__TwoColumnRightPage = TEXT
+        pagets__TwoColumnRightPage.value = TwoColumnRightPage
+
+        pagets__TwoColumnRightTeaserPage = TEXT
+        pagets__TwoColumnRightTeaserPage.value = TwoColumnRightTeaserPage
+
+        pagets__ThreeColumnPage = TEXT
+        pagets__ThreeColumnPage.value = ThreeColumnPage
+
+        pagets__ThreeColumnTeaserPage = TEXT
+        pagets__ThreeColumnTeaserPage.value = ThreeColumnTeaserPage
+      }
+    }
+
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+        levels = 5
+        includeSpacer = 1
+        as = mainnav
+        entryLevel = 0
+      }
+
+      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 {
+        special = rootline
+        special.range = 0|-1
+        includeNotInMenu = 1
+        as = rootnav
+      }
+
+      30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      30 {
+        special = directory
+        special.value = {$site.snippets.legalNav}
+        #special.range = 0|-1
+        includeNotInMenu = 1
+        as = legalnav
+      }
+
+      40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      40 {
+        special = directory
+        special.value = {$site.snippets.topNav}
+        #special.range = 0|-1
+        includeNotInMenu = 1
+        as = topnav
+      }
+    }
+  }
+}
+
+
+
+#############
+# Resources #
+#############
+page {
+  # CSS
+  includeCSSLibs {
+    # These files will not be concatenated
+  }
+
+  includeCSS {
+    #libnormalize = EXT:ma_starter/Resources/Public/Library/normalize-8.0.1.css
+    #utilities = EXT:ma_starter/Resources/Public/Styles/Utilities.css
+    #flexbox = EXT:ma_starter/Resources/Public/Styles/Flexbox.css
+    libtailwind = EXT:ma_starter/Resources/Public/Library/tailwind/output.css
+    styles = EXT:ma_starter/Resources/Public/Styles/Styles.css
+  }
+
+  cssInline {
+    # Keep needed, remove unneeded, add missing, delete me
+    # 10 = FILE
+    # 10.file = EXT:ma_starter/Resources/Public/Styles/example.css
+  }
+
+  # JavaScript (header)
+  includeJSlibs {
+    # Keep needed, remove unneeded, add missing, delete me
+  }
+
+  includeJS {
+    # Keep needed, remove unneeded, add missing, delete me
+  }
+
+  jsInline {
+    # Keep needed, remove unneeded, add missing, delete me
+    # 10 = FILE
+    # 10.file = EXT:ma_starter/Resources/Public/JavaScript/example.js
+  }
+
+  # JavaScript (footer)
+  includeJSFooterlibs {
+    # Keep needed, remove unneeded, add missing, delete me
+    libjquery = EXT:ma_starter/Resources/Public/Library/jquery-3.6.0.min.js
+    libpicturefill = EXT:ma_starter/Resources/Public/Library/picturefill-3.0.2/picturefill.min.js
+  }
+
+  includeJSFooter {
+    # Keep needed, remove unneeded, add missing, delete me
+    utilities = EXT:ma_starter/Resources/Public/JavaScript/Utilities.js
+    globals = EXT:ma_starter/Resources/Public/JavaScript/Globals.js
+  }
+
+  jsFooterInline {
+    # Keep needed, remove unneeded, add missing, delete me
+    # 10 = FILE
+    # 10.file = EXT:ma_starter/Resources/Public/JavaScript/example.js
+  }
+}
+
+
+
+########
+# HEAD #
+########
+lib.head = COA
+lib.head {
+  10 = TEXT
+  10.value = Header (TypoScript)
+  10.wrap = <p>|</p>
+
+  # Neat debugging helper
+  # 666 = TEXT
+  # 666.data = debug:page
+  # 777 = TEXT
+  # 777.data = debug:register
+}
+
+
+
+################
+# LEFT SIDEBAR #
+################
+lib.lbar = COA
+lib.lbar {
+  10 = TEXT
+  10.value = Linke Sidebar (TypoScript)
+  10.wrap = <p>|</p>
+}
+
+
+
+#################
+# RIGHT SIDEBAR #
+#################
+lib.rbar = COA
+lib.rbar {
+  10 = TEXT
+  10.value = Rechte Sidebar (TypoScript)
+  10.wrap = <p>|</p>
+}
+
+
+
+##########
+# FOOTER #
+##########
+lib.foot = COA
+lib.foot {
+  10 = TEXT
+  10.value = Footer (TypoScript)
+  10.wrap = <p>|</p>
+}

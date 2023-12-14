@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2020-08-10T10:26:01+02:00" product-name="ma_starter">
+        <body>
+            <trans-unit id="container" resname="container">
+                <source>Container</source>
+            </trans-unit>
+            <trans-unit id="iconFolder" resname="iconFolder">
+                <source>EXT:ma_starter/Resources/Public/Layouts/</source>
+            </trans-unit>
+            <trans-unit id="templatesFolder" resname="templatesFolder">
+                <source>EXT:ma_starter/Resources/Private/Templates/</source>
+            </trans-unit>
+            <trans-unit id="disallow" resname="disallow">
+                <source>100,50-50,25-25-25-25,33-33-33,33-33-33-float,50-50,50-50_media,75-25,25-75,66-33,33-66</source>
+            </trans-unit>
+
+            <trans-unit id="content" resname="content">
+                <source>Content</source>
+                <target>Inhalte</target>
+            </trans-unit>
+            <trans-unit id="columns.leftColumn" resname="columns.leftColumn">
+                <source>Left column</source>
+                <target>Linke Spalte</target>
+            </trans-unit>
+            <trans-unit id="columns.centerColumn" resname="columns.centerColumn">
+                <source>Center column</source>
+                <target>Mittlere Spalte</target>
+            </trans-unit>
+            <trans-unit id="columns.centerLeftColumn" resname="columns.centerLeftColumn">
+                <source>Center left column</source>
+                <target>Mittlere Linke Spalte</target>
+            </trans-unit>
+            <trans-unit id="columns.centerRightColumn" resname="columns.centerRightColumn">
+                <source>Center right column</source>
+                <target>Mittlere Rechte Spalte</target>
+            </trans-unit>
+            <trans-unit id="columns.rightColumn" resname="columns.rightColumn">
+                <source>Right column</source>
+                <target>Rechte Spalte</target>
+            </trans-unit>
+
+            <trans-unit id="cType.100.label" resname="cType.100.label">
+                <source>One Column (100)</source>
+                <target>Eine Spalte (100)</target>
+            </trans-unit>
+            <trans-unit id="cType.100.description" resname="cType.100.description">
+                <source>One Column (100)</source>
+                <target>Eine Spalte (100)</target>
+            </trans-unit>
+            <trans-unit id="cType.100.icon" resname="cType.100.icon">
+                <source>grid-100.jpg</source>
+                <target>grid-100.jpg</target>
+            </trans-unit>
+
+            <trans-unit id="cType.101.label" resname="cType.101.label">
+                <source>Section</source>
+                <target>Sektion</target>
+            </trans-unit>
+            <trans-unit id="cType.101.description" resname="cType.101.description">
+                <source>Section</source>
+                <target>Sektion</target>
+            </trans-unit>
+            <trans-unit id="cType.101.icon" resname="cType.101.icon">
+                <source>grid-100-section.jpg</source>
+                <target>grid-100-section.jpg</target>
+            </trans-unit>
+
+            <trans-unit id="cType.50-50.label" resname="cType.50-50.label">
+                <source>Two Columns (50|50)</source>
+                <target>Zwei Spalten (50|50)</target>
+            </trans-unit>
+            <trans-unit id="cType.50-50.description" resname="cType.50-50.description">
+                <source>Two Columns (50|50)</source>
+                <target>Zwei Spalten (50|50)</target>
+            </trans-unit>
+            <trans-unit id="cType.50-50.icon" resname="cType.50-50.icon">
+                <source>grid-50-50.jpg</source>
+                <target>grid-50-50.jpg</target>
+            </trans-unit>
+
+            <trans-unit id="cType.50-50_media.label" resname="cType.50-50_media.label">
+                <source>Two Columns (Media) (50|50)</source>
+                <target>Zwei Spalten (Media) (50|50)</target>
+            </trans-unit>
+            <trans-unit id="cType.50-50_media.description" resname="cType.50-50_media.description">
+                <source>Two Columns (Media) (50|50)</source>
+                <target>Zwei Spalten (Media) (50|50)</target>
+            </trans-unit>
+            <trans-unit id="cType.50-50_media.icon" resname="cType.50-50_media.icon">
+                <source>grid-50-50-media.jpg</source>
+                <target>grid-50-50-media.jpg</target>
+            </trans-unit>
+
+            <trans-unit id="cType.50-50_media.label" resname="cType.50-50_media.label">
+                <source>Two Columns (Media) (50|50)</source>
+                <target>Zwei Spalten (Media) (50|50)</target>
+            </trans-unit>
+            <trans-unit id="cType.50-50_media.description" resname="cType.50-50_media.description">
+                <source>Two Columns (Media) (50|50)</source>
+                <target>Zwei Spalten (Media) (50|50)</target>
+            </trans-unit>
+            <trans-unit id="cType.50-50_media.icon" resname="cType.50-50_media.icon">
+                <source>grid-50-50-media.jpg</source>
+                <target>grid-50-50-media.jpg</target>
+            </trans-unit>
+
+            <trans-unit id="cType.33-33-33.label" resname="cType.33-33-33.label">
+                <source>Three Columns (33|33|33)</source>
+                <target>Drei Spalten (33|33|33)</target>
+            </trans-unit>
+            <trans-unit id="cType.33-33-33.description" resname="cType.33-33-33.description">
+                <source>Three Columns (33|33|33)</source>
+                <target>Drei Spalten (33|33|33)</target>
+            </trans-unit>
+            <trans-unit id="cType.33-33-33.icon" resname="cType.33-33-33.icon">
+                <source>grid-33-33-33.jpg</source>
+                <target>grid-33-33-33.jpg</target>
+            </trans-unit>
+
+            <trans-unit id="cType.33-33-33-float.label" resname="cType.33-33-33-float.label">
+                <source>Three Columns (float) (33|33|33)</source>
+                <target>Drei Spalten (float) (33|33|33)</target>
+            </trans-unit>
+            <trans-unit id="cType.33-33-33-float.description" resname="cType.33-33-33-float.description">
+                <source>Three Columns (float) (33|33|33)</source>
+                <target>Drei Spalten (float) (33|33|33)</target>
+            </trans-unit>
+            <trans-unit id="cType.33-33-33-float.icon" resname="cType.33-33-33-float.icon">
+                <source>grid-33-33-33-float.jpg</source>
+                <target>grid-33-33-33-float.jpg</target>
+            </trans-unit>
+
+            <trans-unit id="cType.25-25-25-25.label" resname="cType.25-25-25-25.label">
+                <source>Four Columns (25|25|25|25)</source>
+                <target>Vier Spalten (25|25|25|25)</target>
+            </trans-unit>
+            <trans-unit id="cType.25-25-25-25.description" resname="cType.25-25-25-25.description">
+                <source>Four Columns (25|25|25|25)</source>
+                <target>Vier Spalten (25|25|25|25)</target>
+            </trans-unit>
+            <trans-unit id="cType.25-25-25-25.icon" resname="cType.25-25-25-25.icon">
+                <source>grid-25-25-25-25.jpg</source>
+                <target>grid-25-25-25-25.jpg</target>
+            </trans-unit>
+
+            <trans-unit id="cType.66-33.label" resname="cType.66-33.label">
+                <source>Two Columns (66|33)</source>
+                <target>Zwei Spalten (66|33)</target>
+            </trans-unit>
+            <trans-unit id="cType.66-33.description" resname="cType.66-33.description">
+                <source>Two Columns (66|33)</source>
+                <target>Zwei Spalten (66|33)</target>
+            </trans-unit>
+            <trans-unit id="cType.66-33.icon" resname="cType.66-33.icon">
+                <source>grid-66-33.jpg</source>
+                <target>grid-66-33.jpg</target>
+            </trans-unit>
+
+            <trans-unit id="cType.33-66.label" resname="cType.33-66.label">
+                <source>Two Columns (33|66)</source>
+                <target>Zwei Spalten (33|66)</target>
+            </trans-unit>
+            <trans-unit id="cType.33-66.description" resname="cType.33-66.description">
+                <source>Two Columns (33|66)</source>
+                <target>Zwei Spalten (33|66)</target>
+            </trans-unit>
+            <trans-unit id="cType.33-66.icon" resname="cType.33-66.icon">
+                <source>grid-33-66.jpg</source>
+                <target>grid-33-66.jpg</target>
+            </trans-unit>
+
+            <trans-unit id="cType.75-25.label" resname="cType.75-25.label">
+                <source>Two Columns (75|25)</source>
+                <target>Zwei Spalten (75|25)</target>
+            </trans-unit>
+            <trans-unit id="cType.75-25.description" resname="cType.75-25.description">
+                <source>Two Columns (75|25)</source>
+                <target>Zwei Spalten (75|25)</target>
+            </trans-unit>
+            <trans-unit id="cType.75-25.icon" resname="cType.75-25.icon">
+                <source>grid-75-25.jpg</source>
+                <target>grid-75-25.jpg</target>
+            </trans-unit>
+
+            <trans-unit id="cType.25-75.label" resname="cType.25-75.label">
+                <source>Two Columns (25|75)</source>
+                <target>Zwei Spalten (25|75)</target>
+            </trans-unit>
+            <trans-unit id="cType.25-75.description" resname="cType.25-75.description">
+                <source>Two Columns (25|75)</source>
+                <target>Zwei Spalten (25|75)</target>
+            </trans-unit>
+            <trans-unit id="cType.25-75.icon" resname="cType.25-75.icon">
+                <source>grid-25-75.jpg</source>
+                <target>grid-25-75.jpg</target>
+            </trans-unit>
+
+            <trans-unit id="colors.paletteTitle" resname="colors.paletteTitle">
+                <source>Colors</source>
+                <target>Farbe</target>
+            </trans-unit>
+            <trans-unit id="colors.bgColor" resname="colors.bgColor">
+                <source>Background color</source>
+                <target>Hintergrundfarbe</target>
+            </trans-unit>
+            <trans-unit id="colors.bdColor" resname="colors.bdColor">
+                <source>Border color</source>
+                <target>Rahmenfarbe</target>
+            </trans-unit>
+            <trans-unit id="colors.textColor" resname="colors.textColor">
+                <source>Text color</source>
+                <target>Textfarbe</target>
+            </trans-unit>
+            <trans-unit id="colors.linkColor" resname="colors.linkColor">
+                <source>Link color</source>
+                <target>Linkfarbe</target>
+            </trans-unit>
+            <trans-unit id="colors.headerColor" resname="colors.headerColor">
+                <source>Header color</source>
+                <target>Überschriftsfarbe</target>
+            </trans-unit>
+
+            <trans-unit id="positions.palettePosition" resname="positions.palettePosition">
+                <source>Positioning and spacing</source>
+                <target>Positionierung und Abstände</target>
+            </trans-unit>
+            <trans-unit id="positions.justfy-content" resname="positions.justfy-content">
+                <source>Horizontal alignment</source>
+                <target>Horizontale Ausrichtung</target>
+            </trans-unit>
+            <trans-unit id="positions.align-items" resname="positions.align-items">
+                <source>Vertical alignment</source>
+                <target>Vertikale Ausrichtung</target>
+            </trans-unit>
+            <trans-unit id="positions.column-gap" resname="positions.column-gap">
+                <source>Column spacing</source>
+                <target>Spalte-Abstände</target>
+            </trans-unit>
+
+            <trans-unit id="positions.start" resname="positions.start">
+                <source>Start</source>
+                <target>Anfang</target>
+            </trans-unit>
+            <trans-unit id="positions.end" resname="positions.end">
+                <source>End</source>
+                <target>Ende</target>
+            </trans-unit>
+            <trans-unit id="positions.center" resname="positions.center">
+                <source>Center</source>
+                <target>Zentriert</target>
+            </trans-unit>
+            <trans-unit id="positions.between" resname="positions.between">
+                <source>Space between</source>
+                <target>Abstand zwischen</target>
+            </trans-unit>
+            <trans-unit id="positions.around" resname="positions.around">
+                <source>Space around</source>
+                <target>Abstand herum</target>
+            </trans-unit>
+            <trans-unit id="positions.items-start" resname="positions.items-start">
+                <source>Top</source>
+                <target>Oben</target>
+            </trans-unit>
+            <trans-unit id="positions.items-end" resname="positions.items-end">
+                <source>Bottom</source>
+                <target>Unten</target>
+            </trans-unit>
+            <trans-unit id="positions.baseline" resname="positions.baseline">
+                <source>Baseline</source>
+                <target>Grundlinie</target>
+            </trans-unit>
+            <trans-unit id="positions.stretch" resname="positions.stretch">
+                <source>Stretch</source>
+                <target>Strecken</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

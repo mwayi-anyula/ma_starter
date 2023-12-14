@@ -1,0 +1,11 @@
+TCEFORM {
+    #TYPO3 content
+    tt_content {
+        #remove Grid CEs.
+        #100,101,50-50,25-25-25-25,33-33-33,33-33-33-float,50-50,50-50_media,75-25,25-75,66-33,33-66
+        CType {
+            removeItems = section, 50-50_media, 33-33-33-float
+        }
+    }
+}
+TCEFORM.tt_content.CType.removeItems = section, 50-50_media, 33-33-33-float

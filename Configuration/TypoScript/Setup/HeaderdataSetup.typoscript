@@ -1,0 +1,130 @@
+#####################################################################################
+# Header data                                                                       #
+# @todo:                                                                            #
+# OpenGraph tags, Twitter cards and robots tags are not included for the time being #
+# since they are delegated by TYPO3 by now.                                         #
+# We'll add some of those tags again, if our experience shows they are required.    #
+#####################################################################################
+
+###############
+# Header data #
+###############
+
+# Used as canonical, og:url etc.
+temp.urlToCurrentPage = TEXT
+temp.urlToCurrentPage {
+  typolink {
+    parameter.data = TSFE:id
+    useCacheHash = 0
+    forceAbsoluteUrl = 1
+    returnLast = url
+    addQueryString = 1
+    #exclude parameters found in google search console
+    addQueryString.exclude = type, uid, cHash, gclid, page
+  }
+}
+
+page {
+  # For examples of using data sets in TypoScript, e.g. news detail page titles or pagination in page title
+  headTag = <head prefix="og: http://ogp.me/ns#">
+
+  meta {
+    # SEO parameters
+    keywords = {$globals.metatags.keywords}
+    keywords.override.field = keywords
+    keywords.override.if.isTrue.field = keywords
+    description = {$globals.metatags.description}
+    description.override.field = description
+    description.override.if.isTrue.field = description
+    format-detection = telephone=no
+
+    # Contact data
+    author = {$globals.metatags.author}
+    author.override.field = author
+    author.override.if.isTrue.field = author
+    contact = {$globals.metatags.contact}
+    contact.override.field = author_email
+    contact.override.if.isTrue.field = author_email
+
+    # OpenGraph
+    og:title = TEXT
+    og:title {
+      field = og_title // title
+      noTrimWrap = || {$globals.pageTitleSplitChar} |
+      dataWrap = |{$site.metaData.title}
+      replace = 1
+    }
+    og:site_name = {$site.metaData.title}
+    og:description < .description
+
+    og:type = {$globals.metatags.og:type}
+    og:url < temp.urlToCurrentPage
+    og:email = {$globals.metatags.og:email}
+    og:phone_number = {$globals.metatags.og:phone_number}
+    og:fax_number = {$globals.metatags.og:fax_number}
+    og:latitude = {$globals.metatags.og:latitude}
+    og:longitude = {$globals.metatags.og:longitude}
+    og:street-address = {$globals.metatags.og:street-address}
+
+    og:locality = {$globals.metatags.og:locality}
+    og:locale = {$globals.metatags.og:locale}
+    og:locale.data = siteLanguage:locale
+    og:locale.stdWrap.substring= 0,5
+
+    og:region = {$globals.metatags.og:region}
+    og:postal-code = {$globals.metatags.og:postal-code}
+    og:country-name = {$globals.metatags.og:country-name}
+
+    og:image = {$globals.metatags.og:image}
+
+    # Devices
+    viewport = {$globals.metatags.viewport}
+
+    # Let browsers decide on default. Turn it off if necessary.
+    # x-dns-prefetch-control = off
+    x-dns-prefetch-control.attribute = http-equiv
+  }
+
+  # Non-standard TYPO3 meta tags
+  headerData {
+    # Page title
+    # see sitetitle in root and division TypoScript templates
+
+    # Force DNS prefetch for selected sources.
+    # 20 = TEXT
+    # 20.value = <link rel="dns-prefetch" href="https://WWW.SOMEDOMAIN.COM/">
+
+    # Geo location
+    501 = TEXT
+    501 {
+      value = {$globals.metatags.geo_region}
+      stdWrap {
+        wrap = <meta name="geo.region" content="|">
+        required = 1
+      }
+    }
+
+    502 = TEXT
+    502 {
+      value = {$globals.metatags.geo_placename}
+      stdWrap {
+        wrap = <meta name="geo.placename" content="|">
+        required = 1
+      }
+    }
+
+    503 = TEXT
+    503 {
+      value = {$globals.metatags.geo_position}
+      stdWrap {
+        wrap = <meta name="geo.position" content="|">
+        required = 1
+      }
+    }
+
+    # Always insert Google Analytics as last index of page.headerData, if applicable.
+    # You may need to remove or adjust the index to the projects needs
+    1001 = TEXT
+    1001.value = {$globals.analytics}
+  }
+}

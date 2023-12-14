@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2023-12-13UTC20:45:260">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2022-07-04UTC16:31:390">
         <header>
             <authorName>Mwayi Anyula</authorName>
             <authorEmail>code@mwayianyula.com</authorEmail>
@@ -11,6 +11,66 @@
             </trans-unit>
             <trans-unit id="backend_layout.column.normal">
                 <source>Normal</source>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.column.teaser">
+                <source>Teaser</source>
+                <target>Headerbild</target>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.column.main_content">
+                <source>Main content</source>
+                <target>Hauptinhalt</target>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.column.sidebar_left">
+                <source>Sidebar (left)</source>
+                <target>Sidebar (links)</target>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.column.sidebar_right">
+                <source>Sidebar (right)</source>
+                <target>Sidebar (rechts)</target>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.single">
+                <source>Single column page</source>
+                <target>Einspaltige Seite</target>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.single_teaser">
+                <source>Single column page (teaser)</source>
+                <target>Einspaltige Seite (Headerbild)</target>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.two_column_left">
+                <source>Two column page (left)</source>
+                <target>Zweispaltige Seite (links)</target>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.two_column_left_teaser">
+                <source>Two column page (left with teaser)</source>
+                <target>Zweispaltige Seite (links mit Headerbild)</target>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.two_column_right">
+                <source>Two column page (right)</source>
+                <target>Zweispaltige Seite (rechts)</target>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.two_column_right_teaser">
+                <source>Two column page (right with teaser)</source>
+                <target>Zweispaltige Seite (rechts mit Headerbild)</target>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.three_column">
+                <source>Three column page</source>
+                <target>Dreispaltige Seite</target>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.three_column_teaser">
+                <source>Three column page (teaser)</source>
+                <target>Dreispaltige Seite (Headerbild)</target>
             </trans-unit>
         </body>
     </file>

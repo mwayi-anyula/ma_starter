@@ -1,0 +1,7 @@
+@import 'EXT:ma_starter/Configuration/TsConfig/Page/TCEFORM.typoscript'
+@import 'EXT:ma_starter/Configuration/TsConfig/Page/TCEMAIN.typoscript'
+@import 'EXT:ma_starter/Configuration/TsConfig/Page/RTE.typoscript'
+@import 'EXT:ma_starter/Configuration/TsConfig/Page/BackendLayouts.typoscript'
+@import 'EXT:ma_starter/Configuration/TsConfig/Page/Container.typoscript'
+//@import 'EXT:ma_starter/Configuration/TsConfig/Page/Powermail.typoscript'
+

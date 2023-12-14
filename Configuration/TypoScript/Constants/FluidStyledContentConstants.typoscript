@@ -1,0 +1,52 @@
+########################
+# Fluid Styled Content #
+########################
+styles.templates {
+  templateRootPath = EXT:ma_starter/Resources/Private/Extensions/fluid_styled_content/Templates/
+  partialRootPath = EXT:ma_starter/Resources/Private/Extensions/fluid_styled_content/Partials/
+  layoutRootPath = EXT:ma_starter/Resources/Private/Extensions/fluid_styled_content/Layouts/
+}
+
+styles.content {
+  # Enter the number of the header layout to be used by default
+  defaultHeaderType = 1
+
+  textmedia {
+    # This indicates that maximum number of pixels (width) a block of media elements inserted as content is allowed to consume
+    maxW = 734
+    # Same as above, but this is the maximum width when text is wrapped around an block of media elements. Default is 50% of the normal Max Media Item Width
+    maxWInText >
+
+    # Horizontal distance between media elements in a block in content elements of type "Media & Images". If you change this manually in your CSS, you need to adjust this setting accordingly
+    columnSpacing = 24
+    # Vertical distance after each media elements row in content elements of type ""Text & Media". If you change this manually in your CSS, you need to adjust this setting accordingly
+    rowSpacing = 24
+    # Horizontal distance between an imageblock and text in content elements of type "Text & Images"
+    textMargin = 24
+
+    linkWrap {
+      # This specifies the width of the enlarged media element when click-enlarge is enabled
+      width = 1024m
+      # This specifies the height of the enlarged media element when click-enlarge is enabled
+      height = 768
+
+      # New window: If set, every click-enlarged media element will open in it's own popup window and not the current popup window (which may have a wrong size for the media element to fit in)
+      newWindow = 0
+      # Whether media elements with click-enlarge checked should be rendered lightbox-compliant
+      lightboxEnabled = 0
+      # Which CSS class to use for lightbox links (only applicable if lightbox rendering is enabled)
+      lightboxCssClass = js-magnificPopup
+      # Which rel="" attribute to use for lightbox links (only applicable if lightbox rendering is enabled)
+      lightboxRelAttribute = magnificPopup-{field:uid}
+    }
+  }
+
+  links {
+    # Target for internal links: Should match the name of the content PAGE-object in TypoScript when used with frames. Most cases: set to "" (empty). If you have frames in the template set to "page"
+    target = _self
+    # Target for external links
+    extTarget = _self
+    # Parts to keep when building links: Comma separated list of the link parts to show when building the link-text: scheme,path,query. Example: "" (empty) => www.example.com, "scheme,path" => http://www.example.com
+    keep = path
+  }
+}

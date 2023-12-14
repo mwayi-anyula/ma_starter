@@ -1,0 +1,80 @@
+#############
+# Powermail #
+#############
+defaultLayoutSettings {
+  removeItems = layout1,layout2,layout3,nolabel
+}
+
+TCEFORM {
+  # Form layouts
+  tx_powermail_domain_model_form {
+    css < defaultLayoutSettings
+    css {
+      addItems {
+        # Misc
+        showLabel = Label anzeigen
+      }
+    }
+  }
+
+  # Page layouts
+  tx_powermail_domain_model_page {
+    css < defaultLayoutSettings
+    css {
+      addItems {
+        # Columns
+        twoColumns = Zweispaltig
+        threeColumns = Dreispaltig
+        fourColumns = Vierspaltig
+      }
+    }
+  }
+
+  # Field layouts
+  tx_powermail_domain_model_field {
+    css < defaultLayoutSettings
+    css {
+      addItems {
+        # Misc
+        hideLabel = Label verstecken
+        fullWidth = Volle Breite (bei mehrspaltigen Formularen)
+        fullWidthHideLabel = Volle Breite & Label verstecken (bei mehrspaltigen Formularen)
+        halfWidth = Halbe Breite (bei mehrspaltigen Formularen)
+        halfWidthHideLabel = Halbe Breite & Label verstecken (bei mehrspaltigen Formularen)
+      }
+
+      types.submit < defaultLayoutSettings
+      types.submit {
+        removeItems := addToList(fullWidth, fullWidthHideLabel, halfWidth, halfWidthHideLabel)
+        addItems {
+          # Style
+        }
+      }
+
+      types.file < defaultLayoutSettings
+      types.file {
+        removeItems := addToList(hideLabel, fullWidth, fullWidthHideLabel)
+        addItems {
+          # Style
+          #primary = Blau
+          #secondary = Weiß
+          #inverted = Invertiert
+        }
+      }
+    }
+  }
+}
+
+
+# Predefined beispiel
+# Add predefined receiver object for "Predefined beispiel"
+/*tx_powermail {
+  flexForm {
+    predefinedReceivers {
+      addFieldOptions {
+        predefined = Predefined beispiel
+      }
+    }
+  }
+}*/
+

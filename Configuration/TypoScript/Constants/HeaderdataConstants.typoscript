@@ -1,0 +1,48 @@
+#####################################################################################
+# Header data                                                                       #
+# @todo:                                                                            #
+# OpenGraph tags, Twitter cards and robots tags are not included for the time being #
+# since they are delegated by TYPO3 by now.                                         #
+# We'll add some of those tags again, if our experience shows they are required.    #
+#####################################################################################
+globals =< globals
+
+globals {
+  # Define the default metatags. Empty metatags won't show up in the markup.
+  metatags {
+    # Default keywords and description if any.
+    keywords = {$site.metaData.keywords}
+    description = {$site.metaData.description}
+
+    # Devices
+    viewport = width=device-width, initial-scale=1.0
+
+    # Contact data
+    author = {$site.metaData.title}
+    contact = {$site.metaData.email}
+
+    # Geo location
+    geo_region = {$site.metaData.region}
+    geo_placename = {$site.metaData.city}
+    geo_position = {$site.metaData.latitude};{$site.metaData.longitude}
+    geo_icbm = {$site.metaData.latitude}, {$site.metaData.longitude}
+
+    # OpenGraph
+    og:site_name = {$site.metaData.title}
+    og:description = {$site.metaData.description}
+    og:type = website
+    og:email = {$site.metaData.email}
+    og:phone_number = {$site.metaData.phone}
+    og:fax_number = {$site.metaData.fax}
+    og:latitude = {$site.metaData.latitude}
+    og:longitude = {$site.metaData.longitude}
+    og:street-address = {$site.metaData.street}
+    og:locality = {$site.metaData.country}
+    og:locale = {$site.metaData.locale}
+    og:region = {$site.metaData.region}
+    og:postal-code = {$site.metaData.zip}
+    og:country-name = {$site.metaData.country}
+    og:image = {$site.metaData.image}
+  }
+}
+

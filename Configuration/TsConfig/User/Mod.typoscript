@@ -1,0 +1,26 @@
+#######
+# Mod #
+#######
+mod {
+  # Define visible backend colums: 0 = main, 1 = left, 2 = right, 3 = border
+  # Also, see TCEFORM.tt_content_colPos
+  # colPos_list =
+
+  web_list {
+    # default 40
+    # itemsLimitPerTable =
+    alternateBgColors = 1
+    # Hidden tables by default
+    hideTables := addToList(sys_file, static_countries, static_country_zones, static_currencies, static_languages, static_territories)
+
+    enableDisplayBigControlPanel = activated
+    enableClipBoard = activated
+    enableLocalizationView = activated
+
+    clickTitleMode = info
+  }
+
+  recycler {
+    allowDelete = 1
+  }
+}

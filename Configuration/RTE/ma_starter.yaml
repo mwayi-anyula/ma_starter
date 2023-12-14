@@ -1,0 +1,55 @@
+# MA CKEditor configuration
+# @doc http://docs.ckeditor.com/#!/api/CKEDITOR.config
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+editor:
+    config:
+        contentsCss:
+            -   "EXT:ma_starter/Resources/Public/Styles/Styles.css"
+            -   "EXT:ma_starter/Resources/Public/Styles/RTE.css"
+
+        # Custom classes
+        stylesSet:
+            - { name: "Button", element: "a", attributes: { class: "btn" } }
+            - { name: "Button (Sekundär)", element: "a", attributes: { class: "btn btn-secondary" } }
+            - { name: "Button (Sekundär, weiß)", element: "a", attributes: { class: "btn btn-secondary btn-secondary-invert" } }
+
+        toolbarGroups:
+            - { name: clipboard, groups: [clipboard, undo] }
+            - { name: editing,   groups: [find, selection, spellchecker] }
+            - { name: links }
+            - { name: insert }
+            - { name: tools }
+            - { name: document,  groups: [ mode, document, doctools ] }
+            - { name: others }
+            - "/"
+            - { name: basicstyles, groups: [ basicstyles, align, cleanup ] }
+            - { name: paragraph,   groups: [ list, blocks, align ] }
+            - "/"
+            - { name: styles }
+
+        justifyClasses:
+            - text-left
+            - text-center
+            - text-right
+            - text-justify
+
+        extraPlugins:
+            - justify
+            - find
+
+        removePlugins:
+            # Removes default image plugin. If you want to give editors the ability to add images "inline" (not via TYPO3 FAL),
+            # remove the line below.
+            - image
+
+        removeButtons:
+            - Table
+
+    processing:
+        allowTags:
+            - s
+            - u

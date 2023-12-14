@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+  <f:comment>
+    Grid (33|33|33)
+  </f:comment>
+  <f:section name="Main">
+  <div id="c{data.pid}-{data.uid}" class="grid md:grid-cols-3 {f:if(condition: '{data.layout}', then: ' frame-layout-{data.layout} {data.layout}')}{f:if(condition: '{data.space_before_class}', then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: '{data.space_after_class}', then: ' frame-space-after-{data.space_after_class}')}{f:if(condition: data.justify_content, then: ' {data.justify_content}')}{f:if(condition: data.align_items, then: ' {data.align_items}')}{f:if(condition: data.column_gap, then:  ' {data.column_gap}', else: ' gap-4 lg:gap-8')}">
+    <div>
+      <f:for each="{gridLeft}" as="child">
+        {child.renderedContent -> f:format.raw()}
+      </f:for>
+    </div>
+    <div>
+      <f:for each="{gridCenter}" as="child">
+        {child.renderedContent -> f:format.raw()}
+      </f:for>
+    </div>
+    <div>
+      <f:for each="{gridRight}" as="child">
+        {child.renderedContent -> f:format.raw()}
+      </f:for>
+    </div>
+  </div>
+    <f:render partial="Styling" arguments="{_all}"/>
+  </f:section>
+</html>
